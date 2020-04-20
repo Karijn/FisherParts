@@ -14,6 +14,5 @@ for(r = [15: 15: 210]) {
 
 ![Battens in different sizes][battensample]
 
-
 [battensample]:/images/batten-sample.png "Battens in different sizes"
 
