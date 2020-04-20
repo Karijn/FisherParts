@@ -12,4 +12,9 @@ for(r = [15: 15: 210]) {
         batten(pyth(r, r));
 }
 ```
-![GitHub batten-sample](/images/batten-sample.png)
+
+![image of battens in different sizes][battensample]
+
+
+[battensample]:/images/batten-sample.png
+
