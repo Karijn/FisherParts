@@ -159,6 +159,46 @@ vrad=.5 ;
 staticMountHeigth=1.9;
 staticLatDia=8;
 staticLatRad=4;
+function pyth(a, b) = sqrt((a*a)+(b*b));
+
+module roundedBatten(r=30)
+{
+    rr = round(r*10)/10;
+    s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
+    s1 = str(rr);
+    s=str(s1, s2);
+    difference() {
+        staticLatRounded(width=r );
+        
+        translate([  r/2,  0, 0]) staticGap(angle=0);
+        translate([  -r/2,  0, 0]) staticGap(angle=0);
+        
+        translate([5 -r/2, -1.5, 2.4])
+            linear_extrude(height = 0.5)
+                text(s, size=3, font="Arial:style=Regular");
+        
+    }
+}
+
+module batten(r=30)
+{
+    rr = round(r*10)/10;
+    s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
+    s1 = str(rr);
+    s=str(s1, s2);
+    difference() {
+        staticLat(width=r );
+        // staticLatRounded(width=r );
+        
+        translate([  r/2,  0, 0]) staticGap(angle=0);
+        translate([  -r/2,  0, 0]) staticGap(angle=0);
+        
+        translate([5 -r/2, -1.5, 2.4])
+            linear_extrude(height = 0.5)
+                text(s, size=3, font="Arial:style=Regular");
+        
+    }
+}
 
 module staticGap(heightTop=10, heightBottom=0, angle=0) 
 {
@@ -179,8 +219,17 @@ module staticGap(heightTop=10, heightBottom=0, angle=0)
 }
 
 
-
 module staticLat(width=30, depth=0, staticHeight=staticHeight, staticLatRad = staticLatRad, vrad=.5)
+{
+    translate([-width/2, 0, staticHeight/2])
+        cylinder(d=staticLatDia, h=staticHeight, center=true);
+    translate([width/2, 0, staticHeight/2])
+        cylinder(d=staticLatDia, h=staticHeight, center=true);
+    translate([0, 0, staticHeight/2])
+        cube([width, depth+staticLatDia, staticHeight], center=true);
+}
+
+module staticLatRounded(width=30, depth=0, staticHeight=staticHeight, staticLatRad = staticLatRad, vrad=.5)
 {
     roundedPlate(width=width+staticLatDia, depth=depth+staticLatDia, height=staticHeight, rrad = staticLatRad, vrad=vrad);
 }
@@ -717,3 +766,59 @@ module part_1_8_h(height=15, gliderAsDiameter=6)
 
 /////////////////////
 
+fastnerDia = 20;
+fastnerHeight=5.5;
+fastnerDoubleHeight=12;
+module fastnerBorg(totalHeight=fastnerDoubleHeight)
+{
+    difference()
+    {
+        cylinder(d=fastnerDia, h=totalHeight);
+
+        translate([0, 0, -1])
+        cylinder(d=fisherAsDiameter, h=totalHeight+2);
+        
+        rotate([0, 0, 90]) borgring();
+        
+        translate([0, 0, totalHeight])
+            rotate([0, 180, 90]) fastner();
+       
+    }
+}
+
+module doubleFastner(totalHeight=fastnerDoubleHeight)
+{
+    difference()
+    {
+        cylinder(d=fastnerDia, h=totalHeight);
+
+        translate([0, 0, -1]) cylinder(d=fisherAsDiameter, h=totalHeight+2);
+        
+        fastner();
+
+        translate([0, 0, totalHeight])
+            rotate([0, 180, 90]) fastner();
+    }
+}
+
+module fastner(fastnerHeight=fastnerHeight)
+{
+    hull() {
+        translate([0, 0, 6]) cube([25, 2, 1], center=true);
+        translate([0, 0, .000]) cube([25, 3, .01], center=true);
+    }
+
+    translate([0, 0, -0.01])
+    cylinder(d1=14.5, d2=12.0, h=5.57);
+
+    translate([0, 0, -1]) cylinder(d=12.0, h=7);
+   
+}
+
+module borgring()
+{
+    union() {
+        cylinder(d=8, h=13, center=true);
+        translate([0, 0, 2.5]) rotate([90, 0, 0]) cylinder(d=3, h=15);
+    }
+}
