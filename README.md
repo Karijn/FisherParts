@@ -13,8 +13,8 @@ for(r = [15: 15: 210]) {
 }
 ```
 
-![image of battens in different sizes][battensample]
+![Battens in different sizes][battensample]
 
 
-[battensample]:/images/batten-sample.png
+[battensample]:/images/batten-sample.png "Battens in different sizes"
 
