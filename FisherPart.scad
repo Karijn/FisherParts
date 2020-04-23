@@ -1,3 +1,9 @@
+libpath="C:/Users/Karij/Documents/OpenSCAD/libraries/Fisher/";
+
+pin_standaard=str(libpath, "pin_standaard.stl");
+
+
+
 $fn=100;
 
 gliderAsDiameter=6;
@@ -180,7 +186,7 @@ module roundedBatten(r=30)
     }
 }
 
-module batten(r=30)
+module batten(r=30, angle=0)
 {
     rr = round(r*10)/10;
     s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
@@ -188,10 +194,9 @@ module batten(r=30)
     s=str(s1, s2);
     difference() {
         staticLat(width=r );
-        // staticLatRounded(width=r );
         
-        translate([  r/2,  0, 0]) staticGap(angle=0);
-        translate([  -r/2,  0, 0]) staticGap(angle=0);
+        translate([  r/2,  0, 0]) staticGap(angle=angle);
+        translate([  -r/2,  0, 0]) staticGap(angle=angle);
         
         translate([5 -r/2, -1.5, 2.4])
             linear_extrude(height = 0.5)
@@ -526,13 +531,18 @@ module fisherAs( rot, trans, h, t2=0 )
 	translate([7.5, 0, 0] * trans)
 	translate([0, 7.5, 0] * t2)
 	{
-		union()
-		{
-			translate([- 2.25, 0, 0] )
-                cylinder(d=fisherAsDiameter, h=h + 5, center=true);
-			cube([3, 3, h +5], center=true);
-		}
+		fisherAsBase(h=h+5);
 	}
+}
+
+module fisherAsBase(h)
+{
+    union()
+    {
+        translate([-2.25, 0, 0] )
+        cylinder(d=fisherAsDiameter, h=h, center=true);
+        cube([3, 3, h], center=true);
+    }
 }
 
 ////////////////////////////////
@@ -822,3 +832,121 @@ module borgring()
         translate([0, 0, 2.5]) rotate([90, 0, 0]) cylinder(d=3, h=15);
     }
 }
+
+module roundmount(blen=15, pllen=6.8, ploffs=0) {
+    union() {
+        if ( pllen > 0)
+            translate([0, ploffs, 0.15])
+                cube([3., pllen, 0.3], center=true);
+        if ( pllen == 0)
+            translate([0, ploffs, 0.01])
+                cube([3., blen, 0.05], center=true);
+
+        translate([0, blen/2, 0]) 
+            rotate([90, 0, 0])
+                linear_extrude(height=blen)
+                    difference() {
+                        union() {
+                            translate([0, -2.05])
+                                circle(d=4.06);
+
+                            translate([0, -1.5])
+                                square([3, 3], center=true);
+                        }
+
+                        translate([0, -3.6])
+                            square([5, 2], center=true);
+                        
+                        translate([0, -2.0])
+                            square([1, 2], center=true);
+                    }
+    }
+}
+
+module wpin()
+{
+    union() {
+        difference() {
+            hull() {
+                translate([0, 0, 2.05])
+                    cylinder(d=4, h=3.55, center=true);
+                translate([0, 0, 4.06])
+                    cylinder(d1=4., d2=3, h=.5, center=true);
+            }
+            translate([ 2.5, 0, 1.65]) cube([2., 4, 2.8], center=true);
+            translate([-2.5, 0, 1.65]) cube([2., 4, 2.8], center=true);
+        }
+        hull() {
+            translate([0, 0, 4.25]) cube([4.2, 2., 0.1], center=true);
+            translate([0, 0, 3.75]) cube([5.2, 3., 0.1], center=true);
+            translate([0, 0, 3.45]) cube([5.8, 3., 0.1], center=true);
+            translate([0, 0, 2.65]) cube([5.8, 3., 0.1], center=true);
+            translate([0, 0, 1.55]) cube([3.1, 3., 0.1], center=true);
+        }
+    }
+}
+
+module pin_s_9_5()
+{
+    union() {
+        translate([0, -2.675, 0]) 
+            roundmount(blen=9.45, pllen=0, ploffs=0);
+        pin();
+    }
+}
+
+module pin_s_15()
+{
+    union() {
+        roundmount(blen=15, pllen=0, ploffs=0);
+        pin();
+    }
+}
+module pin_h_9_5() {
+    union() {
+        translate([0, -2.675, 0]) 
+            roundmount(blen=9.45, pllen=5.45, ploffs=2);
+        wpin();
+    }
+}
+
+module pin_h_15() {
+    union() {
+        roundmount(blen=15, pllen=6.8, ploffs=0);
+        wpin();
+    }
+}
+
+
+module pin_r_9_5() {
+    union() {
+        translate([0, -2.675, 0]) 
+            roundmount(blen=9.45, pllen=0, ploffs=0);
+        rpin();
+    }
+}
+
+module pin_r_15() {
+    union() {
+        roundmount(blen=15, pllen=0, ploffs=0);
+        rpin();
+    }
+}
+
+
+module pin() {
+    import (pin_standaard);
+}
+
+module rpin() {
+    union() {
+        difference() {
+            translate([.0, 0, 2.05])
+                sphere(r=2.025);
+            translate([0, 0, 3.60])
+                cube([4.5,4.5, 2], center=true);
+        }
+        translate([0, 0, .285]) cylinder(r=1.4, h=.6, center=true);    
+    }
+}
+

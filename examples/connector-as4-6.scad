@@ -14,8 +14,7 @@ difference() {
         intersection() {
             cylinder(d=6.3, h=1 + height/2, center=true);
             
-#            translate([0, .75, 0])
-            cube([6.3, 4.8, 1 + height/2], center=true);
+//            translate([0, .75, 0]) cube([6.3, 4.8, 1 + height/2], center=true);
         }
         
     translate([0, 0, 4])
