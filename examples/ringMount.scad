@@ -4,7 +4,7 @@ union()
 {
 /*
     translate([0, 35, 0])
-        part(	height,
+        brick(	height,
                 60, 15, 
                 leftAsses_Vertical=[0],		
                 rightAsses_Vertical=[0],

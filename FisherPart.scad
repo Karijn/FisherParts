@@ -12,32 +12,32 @@ height=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 width=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 depth=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 
-//part(width=15, height=15, depth=15, 
+//brick(width=15, height=15, depth=15, 
 //		leftAsses_Vertical_Horizontal=[],			rightAsses_Vertical=[], 
 //		bottomAssesLR=[],	topAssesLR=[], 
 //		bottomAssesFB=[],	topAssesFB=[],
 //		frontAsses_Vertical=[],		backAsses_Vertical=[] );
 
-//part_1_1();
-//part_1_2();
-//part_1_3();
-//part_1_4();
-//part_1_5();
-//part_1_6();
-//part_1_7();
-//part_1_8();
+//brick_1_1();
+//brick_1_2();
+//brick_1_3();
+//brick_1_4();
+//brick_1_5();
+//brick_1_6();
+//brick_1_7();
+//brick_1_8();
 
-//part_2_2();
-//part_2_3();
-//part_2_4();
-//part_2_5();
-//part_2_6();
-//part_2_7();
-//part_2_8();
+//brick_2_2();
+//brick_2_3();
+//brick_2_4();
+//brick_2_5();
+//brick_2_6();
+//brick_2_7();
+//brick_2_8();
 
-//part_1_4_h();
-//part_1_6_h();
-//part_1_8_h();
+//brick_1_4_h();
+//brick_1_6_h();
+//brick_1_8_h();
 
 rightAsses_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
@@ -72,7 +72,7 @@ glidersLR_Horizontal=[];
 rrect=1;
 
 /*
-part_h(	height                  =height, 
+brick_h(	height                  =height, 
         width                   =width, 
         depth                   =depth,
         leftAsses_Vertical      =[1, 2], 
@@ -186,12 +186,13 @@ module roundedBatten(r=30)
     }
 }
 
-module batten(r=30, angle=0)
+module batten(r=30, angle=0, text=undef)
 {
     rr = round(r*10)/10;
+    
     s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
     s1 = str(rr);
-    s=str(s1, s2);
+    s = (text==undef) ? str(s1, s2) : text;
     difference() {
         staticLat(width=r );
         
@@ -274,7 +275,7 @@ module ring(rrad = 4, vrad=.5)
 
 
 ////////////////////////////////
-module part_h(	height                  =15, 
+module brick_h(	height                  =15, 
 				width                   =15, 
 				depth                   =15, 
 				leftAsses_Vertical      =[], 
@@ -299,7 +300,7 @@ module part_h(	height                  =15,
 {
 	difference()
 	{
-		part(	height,	width, depth, 
+		brick(	height,	width, depth, 
 				leftAsses_Vertical		= leftAsses_Vertical,
 				leftAsses_Horizontal	= leftAsses_Horizontal,
                 rightAsses_Vertical 	= rightAsses_Vertical,
@@ -375,7 +376,7 @@ module roundedCube(x, y, z)
     }
 }
 
-module part(	height                  =15, 
+module brick(	height                  =15, 
 				width                   =15, 
 				depth                   =15, 
 				leftAsses_Vertical      =[], 
@@ -548,9 +549,9 @@ module fisherAsBase(h)
 ////////////////////////////////
 
 	
-module part_1_1(height=15)
+module brick_1_1(height=15)
 {
-	part(	height,
+	brick(	height,
 			15, 15, 
 			leftAsses_Vertical=even_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_1,	topAssesFB=oddeven_1,
@@ -559,9 +560,9 @@ module part_1_1(height=15)
 			squareHoles=true );
 }
 
-module part_1_2(height=15)
+module brick_1_2(height=15)
 {
-	part(	height,
+	brick(	height,
 			30, 15, 
 			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_2,	topAssesFB=oddeven_2,
@@ -570,9 +571,9 @@ module part_1_2(height=15)
 			squareHoles=true );
 }
 
-module part_1_3(height=15)
+module brick_1_3(height=15)
 {
-	part(	height,
+	brick(	height,
 			45, 15, 
 			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_3,	topAssesFB=oddeven_3,
@@ -581,9 +582,9 @@ module part_1_3(height=15)
 			squareHoles=true );
 }
  
-module part_1_4(height=15)
+module brick_1_4(height=15)
 {
-	part(	height,
+	brick(	height,
 			60, 15, 
 			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_4,	topAssesFB=oddeven_4,
@@ -592,9 +593,9 @@ module part_1_4(height=15)
 			squareHoles=true );
 }
 
-module part_1_5(height=15)
+module brick_1_5(height=15)
 {
-	part(	height,
+	brick(	height,
 			75, 15,  
 			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_5,	topAssesFB=oddeven_5,
@@ -603,9 +604,9 @@ module part_1_5(height=15)
 			squareHoles=true );
 }
 
-module part_1_6(height=15)
+module brick_1_6(height=15)
 {
-	part(	height,
+	brick(	height,
 			90, 15,  
 			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_6,	topAssesFB=oddeven_6,
@@ -614,9 +615,9 @@ module part_1_6(height=15)
 			squareHoles=true );
 }
 
-module part_1_7(height=15)
+module brick_1_7(height=15)
 {
-	part(	height,
+	brick(	height,
 			105, 15, 
 			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_7,	topAssesFB=oddeven_7,
@@ -625,9 +626,9 @@ module part_1_7(height=15)
 			squareHoles=true );
 }
 
-module part_1_8(height=15)
+module brick_1_8(height=15)
 {
-	part(	height,
+	brick(	height,
 			120, 15, 
 			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 			bottomAssesFB=oddeven_8,	topAssesFB=oddeven_8,
@@ -638,9 +639,9 @@ module part_1_8(height=15)
 
 /////////////////////////////
 
-module part_2_2(height=15)
+module brick_2_2(height=15)
 {
-	part(	height,
+	brick(	height,
 			30, 30, 
 			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
 			bottomAssesFB=oddeven_2,	topAssesFB=oddeven_2,
@@ -649,9 +650,9 @@ module part_2_2(height=15)
 			squareHoles=true );
 }
 
-module part_2_3(height=15)
+module brick_2_3(height=15)
 {
-	part(	height,
+	brick(	height,
 			45, 30, 
 			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
 			bottomAssesFB=oddeven_3,	topAssesFB=oddeven_3,
@@ -660,9 +661,9 @@ module part_2_3(height=15)
 			squareHoles=true );
 }
 
-module part_2_4(height=15)
+module brick_2_4(height=15)
 {
-	part(	height,
+	brick(	height,
 			60, 30, 
 			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
 			bottomAssesFB=oddeven_4,	topAssesFB=oddeven_4,
@@ -671,9 +672,9 @@ module part_2_4(height=15)
 			squareHoles=true );
 }
 
-module part_2_5(height=15)
+module brick_2_5(height=15)
 {
-	part(	height,
+	brick(	height,
 			75, 30, 
 			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
 			bottomAssesFB=oddeven_5,	topAssesFB=oddeven_5,
@@ -682,9 +683,9 @@ module part_2_5(height=15)
 			squareHoles=true );
 }
 
-module part_2_6(height=15)
+module brick_2_6(height=15)
 {
-	part(	height,
+	brick(	height,
 			90, 30, 
 			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
 			bottomAssesFB=oddeven_6,	topAssesFB=oddeven_6,
@@ -693,9 +694,9 @@ module part_2_6(height=15)
 			squareHoles=true );
 }
 
-module part_2_7(height=15)
+module brick_2_7(height=15)
 {
-	part(	height,
+	brick(	height,
 			105, 30, 
 			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
 			bottomAssesFB=oddeven_7,	topAssesFB=oddeven_7,
@@ -704,9 +705,9 @@ module part_2_7(height=15)
 			squareHoles=true );
 }
 
-module part_2_8(height=15)
+module brick_2_8(height=15)
 {
-	part(	height,
+	brick(	height,
 			120, 30, 
 			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
 			bottomAssesFB=oddeven_8,	topAssesFB=oddeven_8,
@@ -717,12 +718,12 @@ module part_2_8(height=15)
 
 //////////////////
 
-module part_1_4_h(height=15, 
+module brick_1_4_g(height=15, 
 					gliderAsDiameter=6)
 {
 	difference()
 	{
-		part(	height,
+		brick(	height,
 				60, 15, 
 				leftAsses_Vertical		= oddeven_1,	rightAsses_Vertical	= oddeven_1,
 				bottomAssesFB	= [0],			topAssesFB	= [0],
@@ -737,11 +738,11 @@ module part_1_4_h(height=15,
 	}
 }
 
-module part_1_6_h(height=15, gliderAsDiameter=6)
+module brick_1_6_g(height=15, gliderAsDiameter=6)
 {
 	difference()
 	{
-		part(	height,
+		brick(	height,
 				90, 15, 
 				leftAsses_Vertical=oddeven_1,	rightAsses_Vertical=oddeven_1,
 				bottomAssesFB=[-1, 1],	topAssesFB=[-1, 1],
@@ -756,11 +757,11 @@ module part_1_6_h(height=15, gliderAsDiameter=6)
 	}
 }
 
-module part_1_8_h(height=15, gliderAsDiameter=6)
+module brick_1_8_g(height=15, gliderAsDiameter=6)
 {
 	difference()
 	{
-		part(	height,
+		brick(	height,
 				120, 15, 
 				leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
 				bottomAssesFB=[],			topAssesFB=[],

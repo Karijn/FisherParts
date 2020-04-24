@@ -1,7 +1,7 @@
 include <Fisher\FisherPart.scad>;
 
 difference() {
-    part(	30,
+    brick(	30,
             45, 30, 
             leftAsses_Vertical=oddeven_2,		
             rightAsses_Vertical=oddeven_2,

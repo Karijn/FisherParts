@@ -3,7 +3,7 @@ include <Fisher\FisherPart.scad>;
 
 difference() {
 translate([5, 0, 0])
-    part(	15,
+    brick(	15,
             45, 15, 
             leftAsses_Vertical=[0],	    rightAsses_Vertical=[0],
 				rightAsses_Horizontal   =[],

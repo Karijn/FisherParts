@@ -5,7 +5,7 @@ include <Fisher\FisherPart.scad>;
 height=15;
 
 difference() {
-    part(	height,
+    brick(	height,
             30, 30, 
             leftAsses_Vertical=[],		
             rightAsses_Vertical=[],

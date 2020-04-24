@@ -1,7 +1,5 @@
 include <Fisher\FisherPart.scad>;
 
-width=15;
-depth=0;
 
 difference() {
     hull() {
@@ -12,11 +10,12 @@ difference() {
             staticLat(width=15, depth=0 );
 
         translate([0, 10, 0])  
-            roundedCylinder(height=staticHeight);
+            cylinder(r=4, h=staticHeight);
     }                
 
     translate([  7.5,  0, 0]) staticGap(angle=0);
     translate([ -7.5,  0, 0]) staticGap(angle=0);
+    
     translate([    0, 10, staticHeight/2]) 
-        cylinder(d=4.5, h=staticHeight + .5, center=true);
+        cylinder(d=fisherAsDiameter, h=staticHeight + .5, center=true);
 }
