@@ -71,6 +71,10 @@ glidersLR_Horizontal=[];
 
 rrect=1;
 
+fastnerDia = 20;
+fastnerHeight=5.5;
+fastnerDoubleHeight=12;
+
 /*
 brick_h(	height                  =height, 
         width                   =width, 
@@ -290,8 +294,6 @@ module brick_h(	height                  =15,
                 frontAsses_Horizontal   =[], 
                 backAsses_Vertical      =[],
                 backAsses_Horizontal    =[],
-                glidersLR_Vertical      =[],
-                glidersLR_Horizontal    =[],
                 glidersFB_Vertical      =[],
                 glidersFB_Horizontal    =[],
                 glidersLR_Vertical      =[],
@@ -313,6 +315,8 @@ module brick_h(	height                  =15,
                 frontAsses_Horizontal   = frontAsses_Horizontal, 
                 backAsses_Vertical	    = backAsses_Vertical, 
                 backAsses_Horizontal    = backAsses_Horizontal,
+//                glidersLR_Vertical      = glidersLR_Vertical,
+//                glidersLR_Horizontal    = glidersLR_Horizontal,
                 squareHoles=squareHoles);
 
         for(i = glidersLR_Vertical)
@@ -777,9 +781,7 @@ module brick_1_8_g(height=15, gliderAsDiameter=6)
 
 /////////////////////
 
-fastnerDia = 20;
-fastnerHeight=5.5;
-fastnerDoubleHeight=12;
+
 module fastnerBorg(totalHeight=fastnerDoubleHeight)
 {
     difference()
