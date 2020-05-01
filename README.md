@@ -2,7 +2,7 @@
 
 ## installation
 - clone this repository to your Documents\OpenScad\libraries folder
-- change the path in the first line of the file FisherPart.scad
+- ~~change the path in the first line of the file FisherPart.scad~~
 
 
 ## samples
@@ -77,7 +77,7 @@ brick(	width                   =30,
 
 ![brick](images/brick-30-15-15-2holes.png "brick with 2 holes")
 
-default bricks are defined in a number of modules.
+default bricks are defined in a number of modules in the include file FisherBrick.scad.
 
 ```scad
 include <Fisher\FisherBrick.scad>
@@ -107,7 +107,7 @@ and finaly, my main reason to start 3D-printing anyway. I wanted to create my ow
 ```scad
 // gliders:
 
-include <Fisher\FisherPart.scad>
+include <Fisher\FisherBrick.scad>
 //brick_1_4_g(height=15, gliderAsDiameter=6);
 brick_1_6_g(height=15, gliderAsDiameter=6);
 //brick_1_8_g(height=15, gliderAsDiameter=6);
