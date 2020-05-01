@@ -20,12 +20,14 @@ brick(	height = 15, width = 15, depth = 15,
         bottomAssesLR           = [], topAssesLR              =[],
         frontAsses_Vertical     = [], frontAsses_Horizontal   =[], 
         backAsses_Vertical      = [], backAsses_Horizontal    =[],
-        squareHoles             = false);
+        squareHoles             = false,
+        triangleAxes            = false);
 
 ```
 when called without parameters, like
 ```scad
-include <Fisher\FisherPart.scad>
+//include <Fisher\FisherPart.scad>
+include <Fisher\FisherBrick.scad>
 
 brick();
 ```
@@ -54,7 +56,8 @@ brick(	height                  =15,
         frontAsses_Horizontal   =[], 
         backAsses_Vertical      =[],
         backAsses_Horizontal    =[],
-        squareHoles             =false
+        squareHoles             =false,
+        triangleAxes            =false
 ); 
 
 // or just:
@@ -77,7 +80,7 @@ brick(	width                   =30,
 default bricks are defined in a number of modules.
 
 ```scad
-include <Fisher\FisherPart.scad>
+include <Fisher\FisherBrick.scad>
 
 
 //brick_1_1(height=15);

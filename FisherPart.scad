@@ -1,8 +1,3 @@
-libpath="C:/Users/Karij/Documents/OpenSCAD/libraries/Fisher/";
-
-pin_standaard=str(libpath, "pin_standaard.stl");
-
-
 
 $fn=100;
 
@@ -13,10 +8,10 @@ width=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 depth=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 
 //brick(width=15, height=15, depth=15, 
-//		leftAsses_Vertical_Horizontal=[],			rightAsses_Vertical=[], 
-//		bottomAssesLR=[],	topAssesLR=[], 
-//		bottomAssesFB=[],	topAssesFB=[],
-//		frontAsses_Vertical=[],		backAsses_Vertical=[] );
+//		leftAxes_Vertical_Horizontal=[],			rightAxes_Vertical=[], 
+//		bottomAxesLR=[],	topAxesLR=[], 
+//		bottomAxesFB=[],	topAxesFB=[],
+//		frontAxes_Vertical=[],		backAxes_Vertical=[] );
 
 //brick_1_1();
 //brick_1_2();
@@ -39,29 +34,29 @@ depth=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 //brick_1_6_h();
 //brick_1_8_h();
 
-rightAsses_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+rightAxes_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-rightAsses_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+rightAxes_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-leftAsses_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+leftAxes_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-leftAsses_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+leftAxes_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-asses_Top_Front_Back = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+axes_Top_Front_Back = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-asses_Bottom_Front_Back = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+axes_Bottom_Front_Back = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-asses_Top_Left_Right = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+axes_Top_Left_Right = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-asses_Bottom_Left_Right = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+axes_Bottom_Left_Right = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-frontAsses_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+frontAxes_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-frontAsses_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+frontAxes_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-backAsses_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+backAxes_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
-backAsses_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
+backAxes_Horizontal = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
 squareHoles = false;
 
@@ -76,26 +71,45 @@ fastnerHeight=5.5;
 fastnerDoubleHeight=12;
 
 /*
+brick(	height                  =30, 
+				width                   =30, 
+				depth                   =30, 
+				leftAxes_Vertical      =[0, 1], 
+				leftAxes_Horizontal    =[1], 
+				rightAxes_Vertical     =[1],
+				rightAxes_Horizontal   =[1],
+				bottomAxesFB           =[1], 
+				topAxesFB              =[1],
+				bottomAxesLR           =[1], 
+				topAxesLR              =[1],
+                frontAxes_Vertical     =[1], 
+                frontAxes_Horizontal   =[1], 
+                backAxes_Vertical      =[1],
+                backAxes_Horizontal    =[1],
+                squareHoles             =false,
+                triangleAxes            =true);
+
 brick_h(	height                  =height, 
         width                   =width, 
         depth                   =depth,
-        leftAsses_Vertical      =[1, 2], 
-        leftAsses_Horizontal    =[1, 2], 
-        rightAsses_Vertical     =[1, 2],
-        rightAsses_Horizontal   =[1, 2],
-        bottomAssesFB           =[1, 2], 
-        topAssesFB              =[1, 2],
-        bottomAssesLR           =[1, 2], 
-        topAssesLR              =[1, 2],
-        frontAsses_Vertical     =[1, 2], 
-        frontAsses_Horizontal   =[1, 2], 
-        backAsses_Vertical      =[1, 2],
-        backAsses_Horizontal    =[1, 2],
+        leftAxes_Vertical      =[1, 2], 
+        leftAxes_Horizontal    =[1, 2], 
+        rightAxes_Vertical     =[1, 2],
+        rightAxes_Horizontal   =[1, 2],
+        bottomAxesFB           =[1, 2], 
+        topAxesFB              =[1, 2],
+        bottomAxesLR           =[1, 2], 
+        topAxesLR              =[1, 2],
+        frontAxes_Vertical     =[1, 2], 
+        frontAxes_Horizontal   =[1, 2], 
+        backAxes_Vertical      =[1, 2],
+        backAxes_Horizontal    =[1, 2],
         glidersLR_Vertical      =[-1, -2],
         glidersLR_Horizontal    =[-1, -2],
         glidersFB_Vertical      =[-1, -2],
         glidersFB_Horizontal    =[-1, -2],
-        squareHoles=true
+        squareHoles             =true,
+        triangleAxes            =true
 );
 */
 
@@ -136,7 +150,7 @@ oddeven_6 = [ -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
 oddeven_7 = [ -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6];
 oddeven_8 = [ -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7];
 
-function getAsses(asses) =  
+function getAxes(axes) =  
     [
         odd_1, 
         even_1, 
@@ -157,7 +171,7 @@ function getAsses(asses) =
         oddeven_6,
         oddeven_7,
         oddeven_8
-    ][asses];
+    ][axes];
 
 
 function modulo(a,b) = [ for (c = a) if (len(search(c, b)) ) c ];
@@ -279,45 +293,45 @@ module ring(rrad = 4, vrad=.5)
 
 
 ////////////////////////////////
-module brick_h(	height                  =15, 
-				width                   =15, 
-				depth                   =15, 
-				leftAsses_Vertical      =[], 
-                leftAsses_Horizontal    =[],
-				rightAsses_Vertical     =[],
-				rightAsses_Horizontal   =[],
-				bottomAssesFB           =[], 
-				topAssesFB              =[],
-				bottomAssesLR           =[], 
-				topAssesLR              =[],
-                frontAsses_Vertical     =[], 
-                frontAsses_Horizontal   =[], 
-                backAsses_Vertical      =[],
-                backAsses_Horizontal    =[],
-                glidersFB_Vertical      =[],
-                glidersFB_Horizontal    =[],
-                glidersLR_Vertical      =[],
-                glidersLR_Horizontal    =[],
-                squareHoles             =false)
+module brick_h(	height                  = 15, 
+				width                   = 15, 
+				depth                   = 15, 
+				leftAxes_Vertical       = [], 
+                leftAxes_Horizontal     = [],
+				rightAxes_Vertical      = [],
+				rightAxes_Horizontal    = [],
+				bottomAxesFB            = [], 
+				topAxesFB               = [],
+				bottomAxesLR            = [], 
+				topAxesLR               = [],
+                frontAxes_Vertical      = [], 
+                frontAxes_Horizontal    = [], 
+                backAxes_Vertical       = [],
+                backAxes_Horizontal     = [],
+                glidersFB_Vertical      = [],
+                glidersFB_Horizontal    = [],
+                glidersLR_Vertical      = [],
+                glidersLR_Horizontal    = [],
+                squareHoles             = false,
+                triangleAxes            = false)
 {
 	difference()
 	{
 		brick(	height,	width, depth, 
-				leftAsses_Vertical		= leftAsses_Vertical,
-				leftAsses_Horizontal	= leftAsses_Horizontal,
-                rightAsses_Vertical 	= rightAsses_Vertical,
-                rightAsses_Horizontal 	= rightAsses_Horizontal,
-				bottomAssesFB       	= bottomAssesFB,
-                topAssesFB	            = topAssesFB,
-				bottomAssesLR	        = bottomAssesLR,
-                topAssesLR	            = topAssesLR,
-				frontAsses_Vertical		= frontAsses_Vertical,
-                frontAsses_Horizontal   = frontAsses_Horizontal, 
-                backAsses_Vertical	    = backAsses_Vertical, 
-                backAsses_Horizontal    = backAsses_Horizontal,
-//                glidersLR_Vertical      = glidersLR_Vertical,
-//                glidersLR_Horizontal    = glidersLR_Horizontal,
-                squareHoles=squareHoles);
+				leftAxes_Vertical		= leftAxes_Vertical,
+				leftAxes_Horizontal	    = leftAxes_Horizontal,
+                rightAxes_Vertical 	    = rightAxes_Vertical,
+                rightAxes_Horizontal 	= rightAxes_Horizontal,
+				bottomAxesFB       	    = bottomAxesFB,
+                topAxesFB	            = topAxesFB,
+				bottomAxesLR	        = bottomAxesLR,
+                topAxesLR	            = topAxesLR,
+				frontAxes_Vertical		= frontAxes_Vertical,
+                frontAxes_Horizontal    = frontAxes_Horizontal, 
+                backAxes_Vertical	    = backAxes_Vertical, 
+                backAxes_Horizontal     = backAxes_Horizontal,
+                squareHoles             = squareHoles,
+                triangleAxes            = triangleAxes);
 
         for(i = glidersLR_Vertical)
         {
@@ -362,7 +376,7 @@ module brick_h(	height                  =15,
 }
 
 
-module roundedCube(x, y, z)
+module roundedCube(x, y, z, rrect=rrect)
 {
     translate([-x/2, -y/2, 0])
     hull() {
@@ -380,22 +394,24 @@ module roundedCube(x, y, z)
     }
 }
 
+
 module brick(	height                  =15, 
 				width                   =15, 
 				depth                   =15, 
-				leftAsses_Vertical      =[], 
-				leftAsses_Horizontal    =[], 
-				rightAsses_Vertical     =[],
-				rightAsses_Horizontal   =[],
-				bottomAssesFB           =[], 
-				topAssesFB              =[],
-				bottomAssesLR           =[], 
-				topAssesLR              =[],
-                frontAsses_Vertical     =[], 
-                frontAsses_Horizontal   =[], 
-                backAsses_Vertical      =[],
-                backAsses_Horizontal    =[],
-                squareHoles             =false)
+				leftAxes_Vertical      =[], 
+				leftAxes_Horizontal    =[], 
+				rightAxes_Vertical     =[],
+				rightAxes_Horizontal   =[],
+				bottomAxesFB           =[], 
+				topAxesFB              =[],
+				bottomAxesLR           =[], 
+				topAxesLR              =[],
+                frontAxes_Vertical     =[], 
+                frontAxes_Horizontal   =[], 
+                backAxes_Vertical      =[],
+                backAxes_Horizontal    =[],
+                squareHoles             =false,
+                triangleAxes            =false)
 {
 	intersection() 
 	{
@@ -406,118 +422,80 @@ module brick(	height                  =15,
 			{
 				cube([width, depth, height], center=true);
 
-				for(i = frontAsses_Vertical)
-				{
-					fisherAs([  0,  0, 270], depth/15, height, i);
-				}
-				for(i = frontAsses_Horizontal)
-				{
-					fisherAs([  90,  0, 270], depth/15, width, i);
-				}
-				for(i = backAsses_Vertical)
-				{
-					fisherAs([  0,  0,  90], depth/15, height, -i);
-				}
-				for(i = backAsses_Horizontal)
-				{
-					fisherAs([  90,  0, 90], depth/15, width, i);
-				}
-					 
-				for(i = topAssesFB)
-				{
-					fisherAs([  0, 270, 90], height/15, depth, -i);
-				}
-				for(i = bottomAssesFB)
-				{
-					fisherAs([  0,  90, 90], height/15, depth, -i);
-				}
-					
-				for(i = topAssesLR)
-				{
-					fisherAs([  0, 270, 0], height/15, width, i);
-				}
-				for(i = bottomAssesLR)
-				{
-					fisherAs([  0,  90, 180], height/15, width, -i);
-				}
-				for( j = leftAsses_Vertical)
-				{
-					fisherAs([  0, 180,  0], width/15, height, j);
-				}
-				for( j = leftAsses_Horizontal)
-				{
-					fisherAs([  270, 180,  0], width/15, depth, j);
-				}
-				for( j = rightAsses_Vertical)
-				{
-					fisherAs([  0,  0,   0], width/15, height, j);
-				}
-				for( j = rightAsses_Horizontal)
-				{
-					fisherAs([  90,  0,   0], width/15, depth, j);
-				}
-				if(squareHoles){
+                fisherAxes([  0,  0, 270],  depth/15,   height,     frontAxes_Vertical,     triangleAxes);
+                fisherAxes([  90,  0, 270], depth/15,   width,      frontAxes_Horizontal,   triangleAxes);
+                fisherAxes([  0,  0,  90],  depth/15,   height,     -backAxes_Vertical,     triangleAxes);
+                fisherAxes([  90,  0, 90],  depth/15,   width,      backAxes_Horizontal,    triangleAxes);
+                fisherAxes([  0, 270, 90],  height/15,  depth,      -topAxesFB,             triangleAxes);
+                fisherAxes([  0,  90, 90],  height/15,  depth,      -bottomAxesFB,          triangleAxes);
+                fisherAxes([  0, 270, 0],   height/15,  width,      topAxesLR,              triangleAxes);
+                fisherAxes([  0,  90, 180], height/15,  width,      -bottomAxesLR,          triangleAxes);
+                fisherAxes([  0, 180,  0],  width/15,   height,     leftAxes_Vertical,      triangleAxes);
+                fisherAxes([  270, 180, 0], width/15,   depth,      leftAxes_Horizontal,      triangleAxes);
+                fisherAxes([  0,  0,   0],  width/15,   height,     rightAxes_Vertical,     triangleAxes);
+                fisherAxes([  90,  0,   0], width/15,   depth,      rightAxes_Horizontal,   triangleAxes);
+
+				if(squareHoles) {
 					edgeDeltaW=((width/2)-2.19);
 					edgeDeltaH=((height/2)-2.19);
 					edgeDeltaD=((depth/2)-2.19);
 					
-					for(i = modulo(rightAsses_Vertical, topAssesLR) ){
+					for(i = modulo(rightAxes_Vertical, topAxesLR) ){
 						translate([edgeDeltaW, i*7.5, edgeDeltaH])	
 							edgeBlock();
 					}
 
-					for(i = modulo(rightAsses_Vertical, bottomAssesLR) ){
+					for(i = modulo(rightAxes_Vertical, bottomAxesLR) ){
 						translate([edgeDeltaW, i*7.5, -edgeDeltaH])	
 							edgeBlock();
 					}
 
-					for(i = modulo(leftAsses_Vertical, topAssesLR) ){
+					for(i = modulo(leftAxes_Vertical, topAxesLR) ){
 						translate([-edgeDeltaW, i*7.5, (height/2)-2.19])	
 							edgeBlock();
 					}
 
-					for(i = modulo(leftAsses_Vertical, bottomAssesLR) ){
+					for(i = modulo(leftAxes_Vertical, bottomAxesLR) ){
 						translate([-edgeDeltaW, i*7.5 , -edgeDeltaH])	
 							edgeBlock();
 					}
 
-					for(i = modulo(frontAsses_Vertical, topAssesFB) ){
+					for(i = modulo(frontAxes_Vertical, topAxesFB) ){
 						translate([i * 7.5, -edgeDeltaD, edgeDeltaH])	
 							edgeBlock();
 					}
 
-					for(i = modulo(frontAsses_Vertical, bottomAssesFB) ){
+					for(i = modulo(frontAxes_Vertical, bottomAxesFB) ){
 						translate([i * 7.5, -edgeDeltaD, -edgeDeltaH])	
 							edgeBlock();
 					}
 
-					for(i = modulo(frontAsses_Horizontal, leftAsses_Horizontal) ){
+					for(i = modulo(frontAxes_Horizontal, leftAxes_Horizontal) ){
 						translate([-edgeDeltaW, -edgeDeltaD, i * 7.5])	
 							edgeBlock();
 					}
-					for(i = modulo(backAsses_Horizontal, leftAsses_Horizontal) ){
+					for(i = modulo(backAxes_Horizontal, leftAxes_Horizontal) ){
 						translate([-edgeDeltaW, edgeDeltaD, i * 7.5])	
 							edgeBlock();
 					}
 
-					for(i = modulo(backAsses_Vertical, topAssesFB) ){
+					for(i = modulo(backAxes_Vertical, topAxesFB) ){
 						translate([i * 7.5, edgeDeltaD, edgeDeltaH])	
 							edgeBlock();
 					}
 
-					for(i = modulo(backAsses_Vertical, bottomAssesFB) ){
+					for(i = modulo(backAxes_Vertical, bottomAxesFB) ){
 						translate([i * 7.5, edgeDeltaD, -edgeDeltaH])	
 							edgeBlock();
 					}
-					for(i = modulo(frontAsses_Horizontal, rightAsses_Horizontal) ){
+					for(i = modulo(frontAxes_Horizontal, rightAxes_Horizontal) ){
 						translate([edgeDeltaW, -edgeDeltaD, i * 7.5])	
 							edgeBlock();
 					}
-					for(i = modulo(backAsses_Horizontal, rightAsses_Horizontal) ){
+					for(i = modulo(backAxes_Horizontal, rightAxes_Horizontal) ){
 						translate([edgeDeltaW, edgeDeltaD, i * 7.5])	
 							edgeBlock();
 					}
-
 				}
 			}
 		}
@@ -529,255 +507,55 @@ module edgeBlock()
     cube([4.4, 4.4, 4.4], center=true);
 }
 
-
-module fisherAs( rot, trans, h, t2=0 )
+module fisherAxes(rot, trans, h, axes, triangleAxes=false)
 {
-	rotate(rot)
-	translate([7.5, 0, 0] * trans)
-	translate([0, 7.5, 0] * t2)
-	{
-		fisherAsBase(h=h+5);
-	}
+    for(i = axes)
+    {
+        fisherAxis( rot, trans, h, i, triangleAxes );
+    }
 }
 
-module fisherAsBase(h)
+module fisherAxis( rot, trans, h, t2=0, triangleAxes=false )
+{
+    rotate(rot)
+    translate([7.5, 0, 0] * trans)
+    translate([0, 7.5, 0] * t2)
+        if( triangleAxes) {
+            triangleMount(length = h + 5);
+        }
+        else
+        {
+                fisherAxisBase(h=h+5);
+        }
+}
+
+module fisherAxisBase(h)
 {
     union()
     {
         translate([-2.25, 0, 0] )
-        cylinder(d=fisherAsDiameter, h=h, center=true);
-        cube([3, 3, h], center=true);
+            cylinder(d=fisherAsDiameter, h=h, center=true);
+        translate([-0.4, 0, 0])
+            cube([1, 3, h], center=true);
     }
 }
 
-////////////////////////////////
 
+module triangleMount(length = 15, overlap=0.01, tolerance = 0.05) {
+    translate([0, 0, -length/2])
+    linear_extrude(height=length)
+        polygon( [
+            [ -2.9,                    -2.05 ],
+            [ -2.7,                  -2.05 ],
+            [ -.6,  -1.5],
+            [ 0.1,  -1.5],
+            [ 0.1,  1.5],
+            [ -.6,  1.5],
+            [ -2.7,                  2.05 ],
+            [ -2.9,                    2.05 ]
+        ]);
+}
 	
-module brick_1_1(height=15)
-{
-	brick(	height,
-			15, 15, 
-			leftAsses_Vertical=even_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_1,	topAssesFB=oddeven_1,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_1,		backAsses_Vertical=oddeven_1,
-			squareHoles=true );
-}
-
-module brick_1_2(height=15)
-{
-	brick(	height,
-			30, 15, 
-			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_2,	topAssesFB=oddeven_2,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_2,		backAsses_Vertical=oddeven_2,
-			squareHoles=true );
-}
-
-module brick_1_3(height=15)
-{
-	brick(	height,
-			45, 15, 
-			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_3,	topAssesFB=oddeven_3,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_3,		backAsses_Vertical=oddeven_3,
-			squareHoles=true );
-}
- 
-module brick_1_4(height=15)
-{
-	brick(	height,
-			60, 15, 
-			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_4,	topAssesFB=oddeven_4,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_4,		backAsses_Vertical=oddeven_4,
-			squareHoles=true );
-}
-
-module brick_1_5(height=15)
-{
-	brick(	height,
-			75, 15,  
-			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_5,	topAssesFB=oddeven_5,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_5,		backAsses_Vertical=oddeven_5,
-			squareHoles=true );
-}
-
-module brick_1_6(height=15)
-{
-	brick(	height,
-			90, 15,  
-			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_6,	topAssesFB=oddeven_6,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_6,		backAsses_Vertical=oddeven_6,
-			squareHoles=true );
-}
-
-module brick_1_7(height=15)
-{
-	brick(	height,
-			105, 15, 
-			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_7,	topAssesFB=oddeven_7,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_7,		backAsses_Vertical=oddeven_7,
-			squareHoles=true );
-}
-
-module brick_1_8(height=15)
-{
-	brick(	height,
-			120, 15, 
-			leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-			bottomAssesFB=oddeven_8,	topAssesFB=oddeven_8,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_8,		backAsses_Vertical=oddeven_8,
-			squareHoles=true );
-}
-
-/////////////////////////////
-
-module brick_2_2(height=15)
-{
-	brick(	height,
-			30, 30, 
-			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
-			bottomAssesFB=oddeven_2,	topAssesFB=oddeven_2,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_2,		backAsses_Vertical=oddeven_2,
-			squareHoles=true );
-}
-
-module brick_2_3(height=15)
-{
-	brick(	height,
-			45, 30, 
-			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
-			bottomAssesFB=oddeven_3,	topAssesFB=oddeven_3,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_3,		backAsses_Vertical=oddeven_3,
-			squareHoles=true );
-}
-
-module brick_2_4(height=15)
-{
-	brick(	height,
-			60, 30, 
-			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
-			bottomAssesFB=oddeven_4,	topAssesFB=oddeven_4,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_4,		backAsses_Vertical=oddeven_4,
-			squareHoles=true );
-}
-
-module brick_2_5(height=15)
-{
-	brick(	height,
-			75, 30, 
-			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
-			bottomAssesFB=oddeven_5,	topAssesFB=oddeven_5,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_5,		backAsses_Vertical=oddeven_5,
-			squareHoles=true );
-}
-
-module brick_2_6(height=15)
-{
-	brick(	height,
-			90, 30, 
-			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
-			bottomAssesFB=oddeven_6,	topAssesFB=oddeven_6,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_6,		backAsses_Vertical=oddeven_6,
-			squareHoles=true );
-}
-
-module brick_2_7(height=15)
-{
-	brick(	height,
-			105, 30, 
-			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
-			bottomAssesFB=oddeven_7,	topAssesFB=oddeven_7,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_7,		backAsses_Vertical=oddeven_7,
-			squareHoles=true );
-}
-
-module brick_2_8(height=15)
-{
-	brick(	height,
-			120, 30, 
-			leftAsses_Vertical=oddeven_2,		rightAsses_Vertical=oddeven_2,
-			bottomAssesFB=oddeven_8,	topAssesFB=oddeven_8,
-			bottomAssesLR=[],			topAssesLR=[],
-			frontAsses_Vertical=oddeven_8,		backAsses_Vertical=oddeven_8,
-			squareHoles=true );
-}
-
-//////////////////
-
-module brick_1_4_g(height=15, 
-					gliderAsDiameter=6)
-{
-	difference()
-	{
-		brick(	height,
-				60, 15, 
-				leftAsses_Vertical		= oddeven_1,	rightAsses_Vertical	= oddeven_1,
-				bottomAssesFB	= [0],			topAssesFB	= [0],
-				bottomAssesLR	= [],			topAssesLR	= [],
-				frontAsses_Vertical		= even_4,		backAsses_Vertical	= even_4);
-
-        translate([ 15, 0, height/2]) 
-            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
-        translate([-15, 0, height/2]) 
-            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
-
-	}
-}
-
-module brick_1_6_g(height=15, gliderAsDiameter=6)
-{
-	difference()
-	{
-		brick(	height,
-				90, 15, 
-				leftAsses_Vertical=oddeven_1,	rightAsses_Vertical=oddeven_1,
-				bottomAssesFB=[-1, 1],	topAssesFB=[-1, 1],
-				bottomAssesLR=[],		topAssesLR=[],
-				frontAsses_Vertical=even_6,		backAsses_Vertical=even_6,
-                squareHoles=true );
-
-        translate([ 30, 0, height/2]) 
-            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
-        translate([-30, 0, height/2]) 
-            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
-	}
-}
-
-module brick_1_8_g(height=15, gliderAsDiameter=6)
-{
-	difference()
-	{
-		brick(	height,
-				120, 15, 
-				leftAsses_Vertical=oddeven_1,		rightAsses_Vertical=oddeven_1,
-				bottomAssesFB=[],			topAssesFB=[],
-				bottomAssesLR=[],			topAssesLR=[],
-				frontAsses_Vertical=even_8,			backAsses_Vertical=even_8);
-
-        translate([ 45, 0, height/2])
-            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
-        translate([-45, 0, height/2]) 
-            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
-	}
-}
 
 /////////////////////
 
@@ -791,7 +569,7 @@ module fastnerBorg(totalHeight=fastnerDoubleHeight)
         translate([0, 0, -1])
         cylinder(d=fisherAsDiameter, h=totalHeight+2);
         
-        rotate([0, 0, 90]) borgring();
+        rotate([0, 0, 90]) borgRing();
         
         translate([0, 0, totalHeight])
             rotate([0, 180, 90]) fastner();
@@ -825,10 +603,9 @@ module fastner(fastnerHeight=fastnerHeight)
     cylinder(d1=14.5, d2=12.0, h=5.57);
 
     translate([0, 0, -1]) cylinder(d=12.0, h=7);
-   
 }
 
-module borgring()
+module borgRing()
 {
     union() {
         cylinder(d=8, h=13, center=true);
@@ -836,7 +613,7 @@ module borgring()
     }
 }
 
-module roundmount(blen=15, pllen=6.8, ploffs=0) {
+module roundMount(blen=15, pllen=6.8, ploffs=0) {
     union() {
         if ( pllen > 0)
             translate([0, ploffs, 0.15])
@@ -893,7 +670,7 @@ module pin_s_9_5()
 {
     union() {
         translate([0, -2.675, 0]) 
-            roundmount(blen=9.45, pllen=0, ploffs=0);
+            roundMount(blen=9.45, pllen=0, ploffs=0);
         pin();
     }
 }
@@ -901,21 +678,22 @@ module pin_s_9_5()
 module pin_s_15()
 {
     union() {
-        roundmount(blen=15, pllen=0, ploffs=0);
+        roundMount(blen=15, pllen=0, ploffs=0);
         pin();
     }
 }
+
 module pin_h_9_5() {
     union() {
         translate([0, -2.675, 0]) 
-            roundmount(blen=9.45, pllen=5.45, ploffs=2);
+            roundMount(blen=9.45, pllen=5.45, ploffs=2);
         wpin();
     }
 }
 
 module pin_h_15() {
     union() {
-        roundmount(blen=15, pllen=6.8, ploffs=0);
+        roundMount(blen=15, pllen=6.8, ploffs=0);
         wpin();
     }
 }
@@ -924,22 +702,54 @@ module pin_h_15() {
 module pin_r_9_5() {
     union() {
         translate([0, -2.675, 0]) 
-            roundmount(blen=9.45, pllen=0, ploffs=0);
+            roundMount(blen=9.45, pllen=0, ploffs=0);
         rpin();
     }
 }
 
 module pin_r_15() {
     union() {
-        roundmount(blen=15, pllen=0, ploffs=0);
+        roundMount(blen=15, pllen=0, ploffs=0);
         rpin();
     }
 }
 
-
-module pin() {
-    import (pin_standaard);
+module roundedRect(width, depth, rad)
+{
+    hull() {
+        translate([   width/2 - rad, depth/2 - rad]) circle(r = rad);
+        translate([ -(width/2 - rad), depth/2 - rad]) circle(r = rad);
+        translate( [-(width/2 - rad), -(depth/2 - rad)]) circle(r = rad);
+        translate([   width/2 - rad,  -(depth/2 - rad)]) circle(r = rad);
+    }
 }
+
+module pin()
+{
+    translate([0, 0, 0])
+    roundedCube(2.8, 2.8, 1, .2);
+
+    ddd = 1.81;
+    ddh = 2.36;
+    dds = .14;
+    dda=.45;
+    ddx = 1.37;
+    hull()
+    for(a = [0:1:19])
+    {
+        rr = dda + sin(3.4*a+35) * ddx;
+        translate([rr, rr, .7+a/11.5]) cubic(dds*2);
+        translate([rr, -rr, .7+a/11.5]) cubic(dds*2);
+        translate([-rr, -rr, .7+a/11.5]) cubic(dds*2);
+        translate([-rr, rr, .7+a/11.5]) cubic(dds*2);
+    }
+}
+
+module cubic(r)
+{
+    cube([r, r, r], center=true);
+}
+
 
 module rpin() {
     union() {
@@ -952,4 +762,6 @@ module rpin() {
         translate([0, 0, .285]) cylinder(r=1.4, h=.6, center=true);    
     }
 }
+
+
 
