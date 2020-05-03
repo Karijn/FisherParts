@@ -8,18 +8,18 @@ difference()
     brick(	height                  =30, 
             width                   =45, 
             depth                   =30,
-            leftAsses_Vertical      =[], 
-            leftAsses_Horizontal    =[-1, 0, 1],
-            rightAsses_Vertical     =[],
-            rightAsses_Horizontal   =[-1, 0, 1],
-            bottomAssesFB           =[-2, 2], 
-            topAssesFB              =[-2, 2 ],
-            bottomAssesLR           =[], 
-            topAssesLR              =[],
-            frontAsses_Vertical     =[], 
-            frontAsses_Horizontal   =[ -1, 0, 1], 
-            backAsses_Vertical      =[],
-            backAsses_Horizontal    =[ -1, 0, 1]
+            leftAxes_Vertical      =[], 
+            leftAxes_Horizontal    =[-1, 0, 1],
+            rightAxes_Vertical     =[],
+            rightAxes_Horizontal   =[-1, 0, 1],
+            bottomAxesFB           =[-2, 2], 
+            topAxesFB              =[-2, 2 ],
+            bottomAxesLR           =[], 
+            topAxesLR              =[],
+            frontAxes_Vertical     =[], 
+            frontAxes_Horizontal   =[ -1, 0, 1], 
+            backAxes_Vertical      =[],
+            backAxes_Horizontal    =[ -1, 0, 1]
     );
 
     translate([0, 0, 15])

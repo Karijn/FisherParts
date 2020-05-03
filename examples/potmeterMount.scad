@@ -7,13 +7,13 @@ height=15;
 difference() {
     brick(	height,
             30, 30, 
-            leftAsses_Vertical=[],		
-            rightAsses_Vertical=[],
-            bottomAssesFB=[],	
-            topAssesFB=[],
-            bottomAssesLR=[],			topAssesLR=[],
-            frontAsses_Vertical=oddeven_2,		
-            backAsses_Vertical=oddeven_2,
+            leftAxes_Vertical=[],		
+            rightAxes_Vertical=[],
+            bottomAxesFB=[],	
+            topAxesFB=[],
+            bottomAxesLR=[],			topAxesLR=[],
+            frontAxes_Vertical=oddeven_2,		
+            backAxes_Vertical=oddeven_2,
             squareHoles=true );
 
     translate([0, 0, 10]) 

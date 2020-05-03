@@ -6,13 +6,13 @@ union()
     translate([0, 35, 0])
         brick(	height,
                 60, 15, 
-                leftAsses_Vertical=[0],		
-                rightAsses_Vertical=[0],
-                bottomAssesFB=[],	
-                topAssesFB=[],
-                bottomAssesLR=[0],			topAssesLR=[0],
-                frontAsses_Vertical=[],		
-                backAsses_Vertical=oddeven_4,
+                leftAxes_Vertical=[0],		
+                rightAxes_Vertical=[0],
+                bottomAxesFB=[],	
+                topAxesFB=[],
+                bottomAxesLR=[0],			topAxesLR=[0],
+                frontAxes_Vertical=[],		
+                backAxes_Vertical=oddeven_4,
                 squareHoles=false );
 */
 //    translate([0, 30, 4])
@@ -35,7 +35,7 @@ union()
         for (i = [30, 150, 270]) {
             rotate(i)
                 translate([-23, 0, 0] )
-                    fisherAsBase( 10 );
+                    fisherAxisBase( 10 );
         }
     }
 

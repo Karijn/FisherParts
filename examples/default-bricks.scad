@@ -1,9 +1,9 @@
 
-include <Fisher\FisherPart.scad>
+include <Fisher\FisherBrick.scad>
 
 
 //brick_1_1(height=15);
-//brick_1_2(height=15);
+brick_1_2(height=15);
 //brick_1_3(height=15);
 //brick_1_4(height=15);
 //brick_1_5(height=15);
@@ -23,5 +23,5 @@ include <Fisher\FisherPart.scad>
 // gliders:
 
 //brick_1_4_g(height=15, gliderAsDiameter=6);
-brick_1_6_g(height=15, gliderAsDiameter=6);
+//brick_1_6_g(height=15, gliderAsDiameter=6);
 //brick_1_8_g(height=15, gliderAsDiameter=6);

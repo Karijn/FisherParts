@@ -14,12 +14,12 @@ the brick module is defined like:
 include <Fisher\FisherPart.scad>
 
 brick(	height = 15, width = 15, depth = 15, 
-        leftAsses_Vertical      = [], leftAsses_Horizontal    =[], 
-        rightAsses_Vertical     = [], rightAsses_Horizontal   =[],
-        bottomAssesFB           = [], topAssesFB              =[],
-        bottomAssesLR           = [], topAssesLR              =[],
-        frontAsses_Vertical     = [], frontAsses_Horizontal   =[], 
-        backAsses_Vertical      = [], backAsses_Horizontal    =[],
+        leftAxes_Vertical      = [], leftAxes_Horizontal    =[], 
+        rightAxes_Vertical     = [], rightAxes_Horizontal   =[],
+        bottomAxesFB           = [], topAxesFB              =[],
+        bottomAxesLR           = [], topAxesLR              =[],
+        frontAxes_Vertical     = [], frontAxes_Horizontal   =[], 
+        backAxes_Vertical      = [], backAxes_Horizontal    =[],
         squareHoles             = false,
         triangleAxes            = false);
 
@@ -43,19 +43,19 @@ for example
 brick(	height                  =15, 
         width                   =30, 
         depth                   =15, 
-        leftAsses_Vertical      =[], 
-        leftAsses_Horizontal    =[], 
-        rightAsses_Vertical     =[],
-        rightAsses_Horizontal   =[],
-        bottomAssesFB           =[], 
-        topAssesFB              =[],
-        bottomAssesLR           =[], 
-        topAssesLR              =[],
-        frontAsses_Vertical     =[0, 1], //  create two vertical mountholes
+        leftAxes_Vertical      =[], 
+        leftAxes_Horizontal    =[], 
+        rightAxes_Vertical     =[],
+        rightAxes_Horizontal   =[],
+        bottomAxesFB           =[], 
+        topAxesFB              =[],
+        bottomAxesLR           =[], 
+        topAxesLR              =[],
+        frontAxes_Vertical     =[0, 1], //  create two vertical mountholes
                                          //  (one in the center and one on 7.5mm)
-        frontAsses_Horizontal   =[], 
-        backAsses_Vertical      =[],
-        backAsses_Horizontal    =[],
+        frontAxes_Horizontal   =[], 
+        backAxes_Vertical      =[],
+        backAxes_Horizontal    =[],
         squareHoles             =false,
         triangleAxes            =false
 ); 
@@ -64,13 +64,13 @@ brick(	height                  =15,
 brick(	height                  =15, 
         width                   =30, 
         depth                   =15, 
-        frontAsses_Vertical     =[0, 1]  //  create two vertical mountholes
+        frontAxes_Vertical     =[0, 1]  //  create two vertical mountholes
                                          //  (one in the center and one on 7.5mm)
 ); 
 
 // or even:
 brick(	width                   =30, 
-        frontAsses_Vertical     =[0, 1]  //  create two vertical mountholes
+        frontAxes_Vertical     =[0, 1]  //  create two vertical mountholes
                                          //  (one in the center and one on 7.5mm)
 ); 
 ```

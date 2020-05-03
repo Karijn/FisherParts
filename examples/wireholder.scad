@@ -2,10 +2,10 @@
 // https://gist.github.com/dustin/80645ad3078394fbd784d2a226bc386f (multi)
 
 
-include <Fisher\FisherPart.scad>;
+include <Fisher\FisherBrick.scad>;
 
 
-wireHolderwp();
+wireHolder();
 
 module wireHoldermount()
 {
@@ -13,7 +13,7 @@ module wireHoldermount()
         brick(	width                   = 15, 
                 height=8,
                 depth=15//,
-                //bottomAssesLR           =[0]  //  create two vertical mountholes
+                //bottomAxesLR           =[0]  //  create two vertical mountholes
                                                 //  (one in the center and one on 7.5mm)
         ); 
         translate([0, 0, 7])
@@ -22,7 +22,7 @@ module wireHoldermount()
         translate([0, 0, 2]) roundedCube(12, 16, 4);          
     }
 
-    translate([0, 0, 0])  rotate([0, 0, 90]) roundmount(blen=13, pllen=0, ploffs=0);
+    translate([0, 0, 0])  rotate([0, 0, 90]) roundMount(blen=13, pllen=0, ploffs=0);
 }
 
 module wireHolderp()
@@ -31,7 +31,7 @@ module wireHolderp()
         brick(	width                   = 15, 
                 height=8,
                 depth=15//,
-                //bottomAssesLR           =[0]  //  create two vertical mountholes
+                //bottomAxesLR           =[0]  //  create two vertical mountholes
                                                 //  (one in the center and one on 7.5mm)
         ); 
         translate([0, 0, 7])
@@ -49,7 +49,7 @@ module wireHolderwp()
         brick(	width                   = 15, 
                 height=8,
                 depth=15//,
-                //bottomAssesLR           =[0]  //  create two vertical mountholes
+                //bottomAxesLR           =[0]  //  create two vertical mountholes
                                                 //  (one in the center and one on 7.5mm)
         ); 
         translate([0, 0, 7])
@@ -67,7 +67,7 @@ module wireHolders()
         brick(	width                   = 15, 
                 height=11,
                 depth=15//,
-                //bottomAssesLR           =[0]  //  create two vertical mountholes
+                //bottomAxesLR           =[0]  //  create two vertical mountholes
                                                 //  (one in the center and one on 7.5mm)
         ); 
         staticGap(heightTop=4);
@@ -84,7 +84,7 @@ module wireHolder()
         brick(	width                   = 15, 
                 height=11,
                 depth=15,
-                bottomAssesLR           =[0]  //  create two vertical mountholes
+                bottomAxesLR           =[0]  //  create two vertical mountholes
                                                 //  (one in the center and one on 7.5mm)
         ); 
         translate([0, 0, 10])

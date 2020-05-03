@@ -5,16 +5,16 @@ difference() {
 translate([5, 0, 0])
     brick(	15,
             45, 15, 
-            leftAsses_Vertical=[0],	    rightAsses_Vertical=[0],
-				rightAsses_Horizontal   =[],
-				bottomAssesFB           =[], 
-				topAssesFB              =[],
-				bottomAssesLR           =[], 
-				topAssesLR              =[],
-                frontAsses_Vertical     =[], 
-                frontAsses_Horizontal   =[], 
-                backAsses_Vertical      =[],
-                backAsses_Horizontal    =[],
+            leftAxes_Vertical=[0],	    rightAxes_Vertical=[0],
+				rightAxes_Horizontal   =[],
+				bottomAxesFB           =[], 
+				topAxesFB              =[],
+				bottomAxesLR           =[], 
+				topAxesLR              =[],
+                frontAxes_Vertical     =[], 
+                frontAxes_Horizontal   =[], 
+                backAxes_Vertical      =[],
+                backAxes_Horizontal    =[],
             squareHoles             =false );
 
     scale(1.05)

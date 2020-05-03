@@ -3,17 +3,17 @@ include <Fisher\FisherPart.scad>;
 difference() {
     brick(	30,
             45, 30, 
-            leftAsses_Vertical=oddeven_2,		
-            rightAsses_Vertical=oddeven_2,
-            leftAsses_Horizontal=[],		
-            rightAsses_Horizontal=[],
-            bottomAssesFB=[],	
-            topAssesFB=[],
-            bottomAssesLR=[-1, 0, 1],			topAssesLR=[-1, 0, 1],
-            frontAsses_Horizontal=[],		
-            backAsses_Horizontal=[],
-            frontAsses_Vertical=oddeven_3,		
-            backAsses_Vertical=oddeven_3,
+            leftAxes_Vertical=oddeven_2,		
+            rightAxes_Vertical=oddeven_2,
+            leftAxes_Horizontal=[],		
+            rightAxes_Horizontal=[],
+            bottomAxesFB=[],	
+            topAxesFB=[],
+            bottomAxesLR=[-1, 0, 1],			topAxesLR=[-1, 0, 1],
+            frontAxes_Horizontal=[],		
+            backAxes_Horizontal=[],
+            frontAxes_Vertical=oddeven_3,		
+            backAxes_Vertical=oddeven_3,
             squareHoles=false );
 /*
     translate([0, 0, 10]) 
