@@ -1,4 +1,5 @@
 include <Fisher\FisherPart.scad>;
+$fn=32;
 
 brick(	height                  =15, 
         width                   =30, 

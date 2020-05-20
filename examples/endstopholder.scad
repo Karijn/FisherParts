@@ -1,5 +1,8 @@
 include <Fisher\FisherPart.scad>;
+$fn=32;
 
+
+endstop_mount_center=-4.4;
 endstop_mount_dist=19.6;
 
 //endstop1();
@@ -17,18 +20,17 @@ module endstop1()
 
         translate([6.7 - endstop_mount_dist/2, 0, 7.5])
             rotate([90, 0, 0])
-            #    cylinder(d=2.5, h=10, center=true);
+                cylinder(d=2.5, h=10, center=true);
 
         translate([6.7 + endstop_mount_dist/2, 0, 7.5])
             rotate([90, 0, 0])
-            #    cylinder(d=2.5, h=10, center=true);
+                cylinder(d=2.5, h=10, center=true);
 
     }
 }
 
-dd=-4.4;
 
-//translate([-17.5 + 1.65, 0, 5]) cube([3.3, 5, 5], center=true);
+
 module endstop2()
 {
     difference() {
@@ -39,12 +41,10 @@ module endstop2()
                                                 //  (one in the center and one on 7.5mm)
         ); 
 
-        translate([dd - endstop_mount_dist/2, 0, 7.5])
-            //rotate([90, 0, 0])
+        translate([endstop_mount_center - endstop_mount_dist/2, 0, 7.5])
                 cylinder(d=2.5, h=10, center=true);
 
-        translate([dd + endstop_mount_dist/2, 0, 7.5])
-            //rotate([90, 0, 0])
+        translate([endstop_mount_center + endstop_mount_dist/2, 0, 7.5])
                 cylinder(d=2.5, h=10, center=true);
 
         translate([13.5,0,3]) cube([9, 11, 8], center=true);

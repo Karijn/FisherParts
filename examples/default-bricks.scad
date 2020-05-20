@@ -1,5 +1,5 @@
-
-include <Fisher\FisherBrick.scad>
+include <Fisher\FisherPart.scad>;
+$fn=32;
 
 
 //brick_1_1(height=15);

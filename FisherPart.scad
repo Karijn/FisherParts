@@ -1,38 +1,17 @@
 
-$fn=100;
+////////////////////////////////
+staticHeight=2.8;
+rrad=4;
+vrad=.5;
+staticMountHeigth=1.9;
+staticLatDia=8;
+staticLatRad=4;
 
 gliderAsDiameter=6;
 
 height=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 width=15; // [15, 30, 45, 60, 75, 90, 105, 120]
 depth=15; // [15, 30, 45, 60, 75, 90, 105, 120]
-
-//brick(width=15, height=15, depth=15, 
-//		leftAxes_Vertical_Horizontal=[],			rightAxes_Vertical=[], 
-//		bottomAxesLR=[],	topAxesLR=[], 
-//		bottomAxesFB=[],	topAxesFB=[],
-//		frontAxes_Vertical=[],		backAxes_Vertical=[] );
-
-//brick_1_1();
-//brick_1_2();
-//brick_1_3();
-//brick_1_4();
-//brick_1_5();
-//brick_1_6();
-//brick_1_7();
-//brick_1_8();
-
-//brick_2_2();
-//brick_2_3();
-//brick_2_4();
-//brick_2_5();
-//brick_2_6();
-//brick_2_7();
-//brick_2_8();
-
-//brick_1_4_h();
-//brick_1_6_h();
-//brick_1_8_h();
 
 rightAxes_Vertical = 0 ; // [0:None, 1:even 1, 2: even 2, 3:   even 3, 4:even 4, 5:even 5, 6:even 6, 7:even 7, 8: even 8, 9:even c4, 10:even c6, 11:even c8, 12:oddeven 2, 13:oddeven 3, 14:oddeven 4, 15:oddeven 5, 16:oddeven 6, 17:oddeven 7, 18:oddeven 8 ]
 
@@ -70,49 +49,8 @@ fastnerDia = 20;
 fastnerHeight=5.5;
 fastnerDoubleHeight=12;
 
-/*
-brick(	height                  =30, 
-				width                   =30, 
-				depth                   =30, 
-				leftAxes_Vertical      =[0, 1], 
-				leftAxes_Horizontal    =[1], 
-				rightAxes_Vertical     =[1],
-				rightAxes_Horizontal   =[1],
-				bottomAxesFB           =[1], 
-				topAxesFB              =[1],
-				bottomAxesLR           =[1], 
-				topAxesLR              =[1],
-                frontAxes_Vertical     =[1], 
-                frontAxes_Horizontal   =[1], 
-                backAxes_Vertical      =[1],
-                backAxes_Horizontal    =[1],
-                squareHoles             =false,
-                triangleAxes            =true);
 
-brick_h(	height                  =height, 
-        width                   =width, 
-        depth                   =depth,
-        leftAxes_Vertical      =[1, 2], 
-        leftAxes_Horizontal    =[1, 2], 
-        rightAxes_Vertical     =[1, 2],
-        rightAxes_Horizontal   =[1, 2],
-        bottomAxesFB           =[1, 2], 
-        topAxesFB              =[1, 2],
-        bottomAxesLR           =[1, 2], 
-        topAxesLR              =[1, 2],
-        frontAxes_Vertical     =[1, 2], 
-        frontAxes_Horizontal   =[1, 2], 
-        backAxes_Vertical      =[1, 2],
-        backAxes_Horizontal    =[1, 2],
-        glidersLR_Vertical      =[-1, -2],
-        glidersLR_Horizontal    =[-1, -2],
-        glidersFB_Vertical      =[-1, -2],
-        glidersFB_Horizontal    =[-1, -2],
-        squareHoles             =true,
-        triangleAxes            =true
-);
-*/
-
+function pyth(a, b) = sqrt((a*a)+(b*b));
 
 
 /* [Hidden] */
@@ -175,89 +113,6 @@ function getAxes(axes) =
 
 
 function modulo(a,b) = [ for (c = a) if (len(search(c, b)) ) c ];
-
-////////////////////////////////
-staticHeight=2.8;
-rrad=4;
-vrad=.5 ;
-staticMountHeigth=1.9;
-staticLatDia=8;
-staticLatRad=4;
-function pyth(a, b) = sqrt((a*a)+(b*b));
-
-module roundedBatten(r=30)
-{
-    rr = round(r*10)/10;
-    s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
-    s1 = str(rr);
-    s=str(s1, s2);
-    difference() {
-        staticLatRounded(width=r );
-        
-        translate([  r/2,  0, 0]) staticGap(angle=0);
-        translate([  -r/2,  0, 0]) staticGap(angle=0);
-        
-        translate([5 -r/2, -1.5, 2.4])
-            linear_extrude(height = 0.5)
-                text(s, size=3, font="Arial:style=Regular");
-        
-    }
-}
-
-module batten(r=30, angle=0, text=undef)
-{
-    rr = round(r*10)/10;
-    
-    s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
-    s1 = str(rr);
-    s = (text==undef) ? str(s1, s2) : text;
-    difference() {
-        staticLat(width=r );
-        
-        translate([  r/2,  0, 0]) staticGap(angle=angle);
-        translate([  -r/2,  0, 0]) staticGap(angle=angle);
-        
-        translate([5 -r/2, -1.5, 2.4])
-            linear_extrude(height = 0.5)
-                text(s, size=3, font="Arial:style=Regular");
-        
-    }
-}
-
-module staticGap(heightTop=10, heightBottom=0, angle=0) 
-{
-    translate([0, 0, heightTop/2 + staticMountHeigth])
-        cylinder(d=6.8, h=heightTop, center=true);
-
-    if ( heightBottom > 0)
-        translate([0, 0, -heightBottom/2])
-            cylinder(d=6.8, h=heightBottom, center=true);
-    
-    cylinder(d=4.5, h=heightTop + heightBottom + staticMountHeigth, center=true);
-    
-    intersection() {
-        rotate([0, 0, angle])
-            cube([10, 3.6, heightTop + heightBottom + staticMountHeigth], center=true);
-        cylinder(d=6.9, h=heightTop + heightBottom + staticMountHeigth, center=true);
-    }
-}
-
-
-module staticLat(width=30, depth=0, staticHeight=staticHeight, staticLatRad = staticLatRad, vrad=.5)
-{
-    translate([-width/2, 0, staticHeight/2])
-        cylinder(d=staticLatDia, h=staticHeight, center=true);
-    translate([width/2, 0, staticHeight/2])
-        cylinder(d=staticLatDia, h=staticHeight, center=true);
-    translate([0, 0, staticHeight/2])
-        cube([width, depth+staticLatDia, staticHeight], center=true);
-}
-
-module staticLatRounded(width=30, depth=0, staticHeight=staticHeight, staticLatRad = staticLatRad, vrad=.5)
-{
-    roundedPlate(width=width+staticLatDia, depth=depth+staticLatDia, height=staticHeight, rrad = staticLatRad, vrad=vrad);
-}
-
 
 module roundedPlate(width=30, depth=0, height=2.8, rrad = 4, vrad=.5)
 {
@@ -764,4 +619,303 @@ module rpin() {
 }
 
 
+module roundedBatten(r=30)
+{
+    rr = round(r*10)/10;
+    s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
+    s1 = str(rr);
+    s=str(s1, s2);
+    difference() {
+        staticLatRounded(width=r );
+        
+        translate([  r/2,  0, 0]) staticGap(angle=0);
+        translate([  -r/2,  0, 0]) staticGap(angle=0);
+        
+        translate([5 -r/2, -1.5, 2.4])
+            linear_extrude(height = 0.5)
+                text(s, size=3, font="Arial:style=Regular");
+        
+    }
+}
 
+module batten(r=30, angle=0, text=undef)
+{
+    rr = round(r*10)/10;
+    
+    s2 = (r < 20) ? "" : (r == rr) ?  " --" : " X";
+    s1 = str(rr);
+    s = (text==undef) ? str(s1, s2) : text;
+    difference() {
+        staticLat(width=r );
+        
+        translate([  r/2,  0, 0]) staticGap(angle=angle);
+        translate([  -r/2,  0, 0]) staticGap(angle=angle);
+        
+        translate([5 -r/2, -1.5, 2.4])
+            linear_extrude(height = 0.5)
+                text(s, size=3, font="Arial:style=Regular");
+        
+    }
+}
+
+module staticGap(heightTop=10, heightBottom=0, angle=0) 
+{
+    translate([0, 0, heightTop/2 + staticMountHeigth])
+        cylinder(d=6.8, h=heightTop, center=true);
+
+    if ( heightBottom > 0)
+        translate([0, 0, -heightBottom/2])
+            cylinder(d=6.8, h=heightBottom, center=true);
+    
+    cylinder(d=4.5, h=heightTop + heightBottom + staticMountHeigth, center=true);
+    
+    intersection() {
+        rotate([0, 0, angle])
+            cube([10, 3.6, heightTop + heightBottom + staticMountHeigth], center=true);
+        cylinder(d=6.9, h=heightTop + heightBottom + staticMountHeigth, center=true);
+    }
+}
+
+
+module staticLat(width=30, depth=0, staticHeight=staticHeight, staticLatRad = staticLatRad, vrad=.5)
+{
+    translate([-width/2, 0, staticHeight/2])
+        cylinder(d=staticLatDia, h=staticHeight, center=true);
+    translate([width/2, 0, staticHeight/2])
+        cylinder(d=staticLatDia, h=staticHeight, center=true);
+    translate([0, 0, staticHeight/2])
+        cube([width, depth+staticLatDia, staticHeight], center=true);
+}
+
+module staticLatRounded(width=30, depth=0, staticHeight=staticHeight, staticLatRad = staticLatRad, vrad=.5)
+{
+    roundedPlate(width=width+staticLatDia, depth=depth+staticLatDia, height=staticHeight, rrad = staticLatRad, vrad=vrad);
+}
+
+
+
+module brick_1_1(height=15)
+{
+	brick(	height,
+			15, 15, 
+			leftAxes_Vertical=even_1,		rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_1,	        topAxesFB=oddeven_1,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_1,	backAxes_Vertical=oddeven_1,
+			squareHoles=true );
+}
+
+module brick_1_2(height=15)
+{
+	brick(	height,
+			30, 15, 
+			leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_2,	        topAxesFB=oddeven_2,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_2,	backAxes_Vertical=oddeven_2,
+			squareHoles=true );
+}
+
+module brick_1_3(height=15)
+{
+	brick(	height,
+			45, 15, 
+			leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_3,	        topAxesFB=oddeven_3,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_3,	backAxes_Vertical=oddeven_3,
+			squareHoles=true );
+}
+ 
+module brick_1_4(height=15)
+{
+	brick(	height,
+			60, 15, 
+			leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_4,	        topAxesFB=oddeven_4,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_4,	backAxes_Vertical=oddeven_4,
+			squareHoles=true );
+}
+
+module brick_1_5(height=15)
+{
+	brick(	height,
+			75, 15,  
+			leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_5,	        topAxesFB=oddeven_5,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_5,	backAxes_Vertical=oddeven_5,
+			squareHoles=true );
+}
+
+module brick_1_6(height=15)
+{
+	brick(	height,
+			90, 15,  
+			leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_6,	        topAxesFB=oddeven_6,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_6,	backAxes_Vertical=oddeven_6,
+			squareHoles=true );
+}
+
+module brick_1_7(height=15)
+{
+	brick(	height,
+			105, 15, 
+			leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_7,	        topAxesFB=oddeven_7,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_7,	backAxes_Vertical=oddeven_7,
+			squareHoles=true );
+}
+
+module brick_1_8(height=15)
+{
+	brick(	height,
+			120, 15, 
+			leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+			bottomAxesFB=oddeven_8,	        topAxesFB=oddeven_8,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_8,	backAxes_Vertical=oddeven_8,
+			squareHoles=true );
+}
+
+/////////////////////////////
+
+module brick_2_2(height=15)
+{
+	brick(	height,
+			30, 30, 
+			leftAxes_Vertical=oddeven_2,	rightAxes_Vertical=oddeven_2,
+			bottomAxesFB=oddeven_2,	        topAxesFB=oddeven_2,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_2,	backAxes_Vertical=oddeven_2,
+			squareHoles=true );
+}
+
+module brick_2_3(height=15)
+{
+	brick(	height,
+			45, 30, 
+			leftAxes_Vertical=oddeven_2,	rightAxes_Vertical=oddeven_2,
+			bottomAxesFB=oddeven_3,	        topAxesFB=oddeven_3,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_3,	backAxes_Vertical=oddeven_3,
+			squareHoles=true );
+}
+
+module brick_2_4(height=15)
+{
+	brick(	height,
+			60, 30, 
+			leftAxes_Vertical=oddeven_2,	rightAxes_Vertical=oddeven_2,
+			bottomAxesFB=oddeven_4,	        topAxesFB=oddeven_4,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_4,	backAxes_Vertical=oddeven_4,
+			squareHoles=true );
+}
+
+module brick_2_5(height=15)
+{
+	brick(	height,
+			75, 30, 
+			leftAxes_Vertical=oddeven_2,	rightAxes_Vertical=oddeven_2,
+			bottomAxesFB=oddeven_5,	        topAxesFB=oddeven_5,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_5,	backAxes_Vertical=oddeven_5,
+			squareHoles=true );
+}
+
+module brick_2_6(height=15)
+{
+	brick(	height,
+			90, 30, 
+			leftAxes_Vertical=oddeven_2,	rightAxes_Vertical=oddeven_2,
+			bottomAxesFB=oddeven_6,	        topAxesFB=oddeven_6,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_6,	backAxes_Vertical=oddeven_6,
+			squareHoles=true );
+}
+
+module brick_2_7(height=15)
+{
+	brick(	height,
+			105, 30, 
+			leftAxes_Vertical=oddeven_2,	rightAxes_Vertical=oddeven_2,
+			bottomAxesFB=oddeven_7,	        topAxesFB=oddeven_7,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_7,	backAxes_Vertical=oddeven_7,
+			squareHoles=true );
+}
+
+module brick_2_8(height=15)
+{
+	brick(	height,
+			120, 30, 
+			leftAxes_Vertical=oddeven_2,	rightAxes_Vertical=oddeven_2,
+			bottomAxesFB=oddeven_8,	        topAxesFB=oddeven_8,
+			bottomAxesLR=[],			    topAxesLR=[],
+			frontAxes_Vertical=oddeven_8,	backAxes_Vertical=oddeven_8,
+			squareHoles=true );
+}
+
+//////////////////
+
+module brick_1_4_g(height=15, 
+					gliderAsDiameter=6)
+{
+	difference()
+	{
+		brick(	height,
+				60, 15, 
+				leftAxes_Vertical		= oddeven_1,	rightAxes_Vertical	= oddeven_1,
+				bottomAxesFB	= [0],			        topAxesFB	= [0],
+				bottomAxesLR	= [],			        topAxesLR	= [],
+				frontAxes_Vertical		= even_4,		backAxes_Vertical	= even_4);
+
+        translate([ 15, 0, height/2]) 
+            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
+        translate([-15, 0, height/2]) 
+            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
+
+	}
+}
+
+module brick_1_6_g(height=15, gliderAsDiameter=6)
+{
+	difference()
+	{
+		brick(	height,
+				90, 15, 
+				leftAxes_Vertical=oddeven_1,	rightAxes_Vertical=oddeven_1,
+				bottomAxesFB=[-1, 1],	        topAxesFB=[-1, 1],
+				bottomAxesLR=[],		        topAxesLR=[],
+				frontAxes_Vertical=even_6,		backAxes_Vertical=even_6,
+                squareHoles=true );
+
+        translate([ 30, 0, height/2]) 
+            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
+        translate([-30, 0, height/2]) 
+            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
+	}
+}
+
+module brick_1_8_g(height=15, gliderAsDiameter=6)
+{
+	difference()
+	{
+		brick(	height,
+				120, 15, 
+				leftAxes_Vertical=oddeven_1,		rightAxes_Vertical=oddeven_1,
+				bottomAxesFB=[],			topAxesFB=[],
+				bottomAxesLR=[],			topAxesLR=[],
+				frontAxes_Vertical=even_8,			backAxes_Vertical=even_8);
+
+        translate([ 45, 0, height/2])
+            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
+        translate([-45, 0, height/2]) 
+            cylinder(d=gliderAsDiameter, h=height + 2, center=true);
+	}
+}

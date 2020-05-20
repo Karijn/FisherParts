@@ -1,6 +1,5 @@
-
-
 include <Fisher\FisherPart.scad>;
+$fn=32;
 
 height=15;
 

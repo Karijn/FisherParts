@@ -1,5 +1,5 @@
 include <Fisher\FisherPart.scad>;
-
+$fn=32;
 
 difference() {
     hull() {

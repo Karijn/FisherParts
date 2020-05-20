@@ -1,4 +1,5 @@
 include <Fisher\FisherPart.scad>;
+$fn=32;
 
 
 translate([0, 0, 0]) 

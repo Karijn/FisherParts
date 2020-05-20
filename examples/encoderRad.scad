@@ -1,4 +1,5 @@
 include <Fisher\FisherPart.scad>;
+$fn=32;
 
 step=45;
 outerrad=15;

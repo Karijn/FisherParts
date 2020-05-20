@@ -1,4 +1,5 @@
 include <Fisher\FisherPart.scad>;
+$fn=32;
 
 difference() {
     brick(	30,

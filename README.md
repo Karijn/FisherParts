@@ -26,9 +26,8 @@ brick(	height = 15, width = 15, depth = 15,
 ```
 when called without parameters, like
 ```scad
-//include <Fisher\FisherPart.scad>
-include <Fisher\FisherBrick.scad>
-
+include <Fisher\FisherPart.scad>
+$fn=32;
 brick();
 ```
 
